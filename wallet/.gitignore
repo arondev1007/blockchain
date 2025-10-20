@@ -1,0 +1,44 @@
+*.exe
+*.dll
+*.test
+__debug_bin
+__debug_bin.exe
+
+src/fw
+src/js/picona
+
+.DS_Store
+node_modules
+/dist
+dist
+package-lock.json
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+debug/
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
+
+/bin/gcc/mingw64
+*.wasm
+
+ 

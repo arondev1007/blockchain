@@ -1,0 +1,17 @@
+[package]
+name = "wallet"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.9.0"
+
+tiny-keccak = "2.0.2"
+bitcoin = { version = "0.32.5", features = ["rand-std"] }
+ethers = "2.0.14"
+tiny-bip39 = "2.0.0"
+
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+
+hex = "0.4.3"

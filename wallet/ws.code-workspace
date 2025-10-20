@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"arru",
+			"Bindgen",
+			"conv",
+			"pubkey",
+			"secp"
+		],
+		"rust-analyzer.diagnostics.disabled": [
+			"needless_return"
+		]
+	}
+}
