@@ -9,4 +9,3 @@ memory = { version = "0.1.0", path = "../memory" }
 wasmer = "5.0.4"
 wasmer-middlewares = "5.0.4"
 borsh = { version = "1.5.1", features = ["derive"] }
-

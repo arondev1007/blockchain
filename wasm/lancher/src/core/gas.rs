@@ -12,12 +12,7 @@ pub struct GasMetering;
 impl GasMetering {
     pub const DEF_GAS_PRIORITY: u64 = 1;
 
-    pub fn new() -> Self {
-        GasMetering
-    }
-
     pub fn create_cfg(
-        &self,
         gas_consumption: Option<Arc<dyn Fn(&Operator) -> u64 + Send + Sync + 'static>>,
     ) -> impl CompilerConfig {
         // Set gas limit to 0 for module replication
@@ -25,7 +20,7 @@ impl GasMetering {
         let gas_limit = 0;
 
         // Determine gas consumption: use provided or default
-        let arc_fn = gas_consumption.unwrap_or_else(|| self.set_default_consumption());
+        let arc_fn = gas_consumption.unwrap_or_else(|| Self::set_default_consumption());
         let consumption_fn = move |operator: &Operator| -> u64 { arc_fn(operator) };
         let metering = Arc::new(Metering::new(gas_limit, consumption_fn));
 
@@ -36,7 +31,7 @@ impl GasMetering {
         compiler_config
     }
 
-    pub fn get_left(&self, store: &mut Store, instance: &Instance) -> u64 {
+    pub fn get_left(store: &mut Store, instance: &Instance) -> u64 {
         let gas_left: u64 = match get_remaining_points(store, instance) {
             MeteringPoints::Remaining(points) => points,
             MeteringPoints::Exhausted => 0,
@@ -69,7 +64,7 @@ impl GasMetering {
         set_remaining_points(store, instance, u64_gas);
     }
 
-    fn set_default_consumption(&self) -> Arc<dyn Fn(&Operator) -> u64 + Send + Sync + 'static> {
+    fn set_default_consumption() -> Arc<dyn Fn(&Operator) -> u64 + Send + Sync + 'static> {
         Arc::new(move |operator: &Operator| -> u64 {
             let gas_by_opcode = match operator {
                 Operator::BrTable { .. } => 120,
