@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "quicknode",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "websocket",
+		"cSpell.words": [
+			"arrc",
+			"arrt",
+			"Conv",
+			"Picona"
+		]
+	}
+}

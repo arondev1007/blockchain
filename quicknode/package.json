@@ -1,0 +1,41 @@
+{
+	"name": "@devtools-dev/quicknode",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./dist/src/main.js",
+	"types": "./dist/src/main.d.ts",
+	"scripts": {
+		"dev": "ts-node ./src/main.ts --trace-warnings",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc",
+		"service": "node ./dist/src/main.js --trace-warnings"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.13.2",
+		"big.js": "^6.2.1",
+		"body-parser": "^2.2.1",
+		"dotenv": "^17.2.3",
+		"express": "^5.1.0",
+		"tronweb": "^6.1.1"
+	},
+	"devDependencies": {
+		"@types/big.js": "^6.2.2",
+		"@types/express": "^5.0.5",
+		"@types/node": "^22.19.3",
+		"ethers": "^6.13.4",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/devtools-dev/module__backend/"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
+	"files": [
+		"/dist/src/"
+	]
+}

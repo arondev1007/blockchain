@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"module": "commonjs",
+		"outDir": "./dist/src",
+		"types": [
+			"node"
+		],
+		"rootDir": "./src",
+		"strict": true,
+		"esModuleInterop": true,
+		"composite": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowJs": true,
+		"typeRoots": [
+			"./src",
+			"./node_modules/@types"
+		]
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.js",
+		"types/**/*",
+		"define_api.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
+}
